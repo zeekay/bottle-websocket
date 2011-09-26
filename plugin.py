@@ -40,7 +40,7 @@ def websocket(callback):
         subprotocols = request.environ.get('HTTP_SEC_WEBSOCKET_PROTOCOL')
         ws_protocols = []
         if subprotocols:
-        for s in subprotocols.split(','):
+            for s in subprotocols.split(','):
                 s = s.strip()
                 if s in protocols:
                     ws_protocols.append(s)
@@ -75,14 +75,3 @@ def websocket(callback):
         rv = callback(websocket, *args, **kwargs)
         return rv
     return wrapper
-
-from bottle import ServerAdapter
-from gevent import pywsgi, monkey, local
-from ws4py.server.geventserver import UpgradableWSGIHandler
-import threading
-
-class GeventWebSocketServer(ServerAdapter):
-    def run(self, handler):
-        if self.options.get('monkey', True):
-            if not threading.local is local.local: monkey.patch_all()
-        pywsgi.WSGIServer((self.host, self.port), handler, handler_class=UpgradableWSGIHandler).serve_forever()
