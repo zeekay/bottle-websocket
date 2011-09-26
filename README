@@ -1,0 +1,1 @@
+This project adds websocket capabilities to bottle, leveraging Websocket-for-Python and gevent.
