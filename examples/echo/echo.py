@@ -1,12 +1,12 @@
-from bottle import route, run, template
+from bottle import get, run, template
 from bottle_websocket.server import GeventWebSocketServer
 from bottle_websocket.plugin import websocket
 
-@route('/')
+@get('/')
 def index():
     return template('index')
 
-@route('/websocket', apply=[websocket])
+@get('/websocket', apply=[websocket])
 def echo(ws):
     while True:
         msg = ws.receive(msg_obj=True)
