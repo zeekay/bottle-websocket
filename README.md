@@ -14,7 +14,6 @@ You can use the websocket plugin to turn routes websocket handlers, the websocke
             if msg is not None:
                 ws.send(msg)
             else: break
-        ws.close()
 
 And then use the provided server:
 
