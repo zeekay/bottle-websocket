@@ -1,5 +1,17 @@
 import base64
+try:
+    import ujson as json
+except ImportError:
+    try:
+        import simplejson as json
+    except ImportError:
+        try:
+            import json
+        except ImportError:
+            json = None
+
 from hashlib import sha1
+
 from bottle import request, HTTPError
 
 from ws4py.exc import HandshakeError
@@ -7,6 +19,8 @@ from ws4py import WS_KEY
 from ws4py.server.wsgi.middleware import WebSocketHandler
 
 WS_VERSION = 8
+
+CLOSE_SOCKET = True
 
 def websocket(callback):
     def wrapper(*args, **kwargs):
@@ -71,7 +85,12 @@ def websocket(callback):
         for k,v in headers:
             socket.send(': '.join([k,v]) + '\r\n')
         socket.send('\r\n')
+
         websocket = WebSocketHandler(socket, ws_protocols, ws_extensions, request.environ)
+        if json:
+            websocket.send_json = lambda msg: websocket.send(json.dumps(msg))
+            websocket.receive_json = lambda: json.loads(websocket.receive())
         callback(websocket, *args, **kwargs)
-        websocket.close()
+        if CLOSE_SOCKET:
+            websocket.close()
     return wrapper
