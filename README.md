@@ -17,4 +17,4 @@ You can use the websocket plugin to turn routes websocket handlers, the websocke
 
 And then use the provided server:
 
-    run(host='127.0.0.1', port=8080, server=GeventWebSocketServer, monkey=True)
+    run(host='127.0.0.1', port=8080, server=GeventWebSocketServer)
