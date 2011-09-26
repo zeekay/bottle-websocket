@@ -13,6 +13,5 @@ def echo(ws):
         if msg is not None:
             ws.send(msg)
         else: break
-    ws.close()
 
 run(host='127.0.0.1', port=8080, server=GeventWebSocketServer, monkey=True)

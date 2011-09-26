@@ -72,6 +72,6 @@ def websocket(callback):
             socket.send(': '.join([k,v]) + '\r\n')
         socket.send('\r\n')
         websocket = WebSocketHandler(socket, ws_protocols, ws_extensions, request.environ)
-        rv = callback(websocket, *args, **kwargs)
-        return rv
+        callback(websocket, *args, **kwargs)
+        websocket.close()
     return wrapper

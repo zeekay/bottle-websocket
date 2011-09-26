@@ -7,5 +7,5 @@ setup(
     author_email='zeekayy@gmail.com',
     packages=['bottle_websocket',],
     description='WebSockets for bottle',
-    long_description=open('README').read(),
+    long_description=open('README.md').read(),
 )
