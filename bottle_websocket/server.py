@@ -5,6 +5,5 @@ import threading
 
 class GeventWebSocketServer(ServerAdapter):
     def run(self, handler):
-        if self.options.get('monkey', True):
-            if not threading.local is local.local: monkey.patch_all()
+        if not threading.local is local.local: monkey.patch_all()
         pywsgi.WSGIServer((self.host, self.port), handler, handler_class=UpgradableWSGIHandler).serve_forever()
