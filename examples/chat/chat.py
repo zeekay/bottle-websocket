@@ -1,6 +1,6 @@
 from bottle import get, run, template
-from bottle_websocket.plugin import websocket
-from bottle_websocket.server import GeventWebSocketServer
+from bottle.ext.websocket import GeventWebSocketServer
+from bottle.ext.websocket import websocket
 
 users = set()
 

@@ -2,8 +2,8 @@ This project adds websocket capabilities to [bottle](http://bottlepy.org), lever
 
 Usage is pretty straight-forward, just import the server and plugin:
 
-    from bottle_websocket.server import GeventWebSocketServer
-    from bottle_websocket.plugin import websocket
+    from bottle.ext.websocket import GeventWebSocketServer
+    from bottle.ext.websocket import websocket
 
 You can use the websocket plugin to turn routes websocket handlers, the websocket is passed to the route as the first argument:
 
