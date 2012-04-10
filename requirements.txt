@@ -1,2 +1,2 @@
 gevent
-git+https://github.com/progrium/WebSocket-for-Python.git
+gevent-websocket
