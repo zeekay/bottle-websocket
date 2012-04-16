@@ -1,4 +1,4 @@
-This project adds websocket capabilities to [bottle](http://bottlepy.org), leveraging [Websocket-for-Python](https://github.com/Lawouach/WebSocket-for-Python) and [gevent](http://www.gevent.org/).
+This project adds websocket capabilities to [bottle](http://bottlepy.org), leveraging [gevent-websocket](http://www.gelens.org/code/gevent-websocket/) and [gevent](http://www.gevent.org/).
 
 Usage is pretty straight-forward, just import the server and plugin:
 
