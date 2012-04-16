@@ -27,4 +27,4 @@ And then use the provided server:
 
 ### Contributors
 - [zeekay](https://github.com/zeekay)
-- [xeros](https://github.com/xeross)
+- [xeross](https://github.com/xeross)
