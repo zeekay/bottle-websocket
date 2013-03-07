@@ -1,15 +1,13 @@
 from setuptools import setup
-from os import path
-
-readme = open(path.join(path.abspath(path.dirname(__file__)), 'README.md')).read()
 
 setup(
     name='bottle-websocket',
-    version='0.2',
+    version='0.2.5',
     author='Zach Kelling',
     author_email='zeekayy@gmail.com',
     packages=['bottle_websocket',],
+    package_data={'': ['README.md']},
     description='WebSockets for bottle',
-    long_description=readme,
+    long_description=open('README.md'),
     install_requires=['bottle', 'gevent-websocket'],
 )
