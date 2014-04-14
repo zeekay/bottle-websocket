@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='bottle-websocket',
-    version='0.2.5',
+    version='0.2.6',
     license='MIT',
     url='https://github.com/zeekay/bottle-websocket',
     author='Zach Kelling',
