@@ -1,5 +1,11 @@
 from setuptools import setup
 
+
+try:
+    long_description = open('README.md').read()
+except:
+    long_description = u"Easy websockets for bottle."
+
 setup(
     name='bottle-websocket',
     version='0.2.6',
@@ -10,7 +16,7 @@ setup(
     packages=['bottle_websocket',],
     package_data={'': ['README.md']},
     description='WebSockets for bottle',
-    long_description=open('README.md'),
+    long_description=long_description,
     install_requires=['bottle', 'gevent-websocket'],
     classifiers=[
         'Environment :: Web Environment',
