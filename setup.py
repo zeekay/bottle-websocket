@@ -4,7 +4,7 @@ from setuptools import setup
 try:
     long_description = open('README.md').read()
 except:
-    long_description = u"Easy websockets for bottle."
+    long_description = "Easy websockets for bottle."
 
 setup(
     name='bottle-websocket',
