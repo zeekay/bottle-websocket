@@ -8,7 +8,7 @@ except:
 
 setup(
     name='bottle-websocket',
-    version='0.2.7',
+    version='0.2.8',
     license='MIT',
     url='https://github.com/zeekay/bottle-websocket',
     author='Zach Kelling',
