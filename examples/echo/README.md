@@ -1,5 +1,5 @@
-# Chat Example
-Simple chat server example.
+# Echo Example
+Simple echo server example.
 
 ## Install
 Install dependencies:
@@ -10,5 +10,5 @@ $ pip install -r requirements.txt
 ## Usage
 Run the server:
 ```bash
-$ python chat.py
+$ python echo.py
 ```
