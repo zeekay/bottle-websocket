@@ -1,5 +1,5 @@
 # Chat Example
-Simple chat example.
+Simple chat server example.
 
 ## Install
 Install dependencies:
