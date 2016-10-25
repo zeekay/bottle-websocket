@@ -1,4 +1,4 @@
-from bottle import default_app, get, template
+from bottle import get, template, run
 from bottle.ext.websocket import GeventWebSocketServer
 from bottle.ext.websocket import websocket
 
@@ -16,7 +16,8 @@ def chat(ws):
         if msg is not None:
             for u in users:
                 u.send(msg)
-        else: break
+        else:
+            break
     users.remove(ws)
 
-application = default_app()
+run(host='127.0.0.1', port=8080, server=GeventWebSocketServer)
