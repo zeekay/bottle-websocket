@@ -7,7 +7,7 @@ from geventwebsocket.logging import create_logger
 
 class GeventWebSocketServer(ServerAdapter):
     def run(self, handler):
-        server = pywsgi.WSGIServer((self.host, self.port), handler, handler_class=WebSocketHandler)
+        server = pywsgi.WSGIServer((self.host, self.port), handler, handler_class=WebSocketHandler, **self.options)
 
         if not self.quiet:
             server.logger = create_logger('geventwebsocket.logging')
