@@ -17,6 +17,7 @@ setup(
     package_data={'': ['README.md']},
     description='WebSockets for bottle',
     long_description=long_description,
+    long_description_content_type="text/markdown",
     install_requires=['bottle', 'gevent-websocket'],
     classifiers=[
         'Environment :: Web Environment',
